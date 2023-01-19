@@ -1,0 +1,26 @@
+version: '0.1'
+
+services:
+  webserver:
+    image: myrecord:0.1
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./html:/var/www/html/
+      - ./apache2/apache2.conf:/etc/apache2/apache2.conf
+      - ./apache2/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache2/ports.conf:/etc/apache2/ports.conf
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+  
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'myrecord2022!'
+      MYSQL_DATABASE: myrecord
+      MYSQL_USER: myrecord
+      MYSQL_PASSWORD: myrecord
+    volumes:
+      - ./data:/var/lib/mysql/
+    ports:
+      - "127.0.0.1:13306:3306"
+    platform: linux/amd64
