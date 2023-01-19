@@ -1,0 +1,7 @@
+!data/.gitkeep
+data/*
+!html/.gitkeep
+!html/data/.gitkeep
+!html/data/session/.gitkeep
+html/*
+.DS_Store
