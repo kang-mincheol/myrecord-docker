@@ -9,4 +9,4 @@ RUN pecl install xdebug-2.7.2 && docker-php-ext-enable xdebug
 RUN pecl install imagick && docker-php-ext-enable imagick
 RUN a2enmod headers
 
-EXPOSE 80 5000 8000
+EXPOSE 80
